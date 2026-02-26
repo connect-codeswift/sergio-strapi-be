@@ -23,10 +23,13 @@
     "infoTwoTitle": {
       "type": "string"
     },
-    "infoTwoDesc": {
+    "infoThreeTitle": {
       "type": "string"
     },
-    "infoThreeTitle": {
+    "infoOneDesc": {
+      "type": "string"
+    },
+    "infoTwoDesc": {
       "type": "string"
     },
     "infoThreeDesc": {

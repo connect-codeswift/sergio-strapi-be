@@ -475,6 +475,7 @@ export interface ApiAboutUsSectionAboutUsSection
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    infoOneDesc: Schema.Attribute.String;
     infoOneTitle: Schema.Attribute.String;
     infoThreeDesc: Schema.Attribute.String;
     infoThreeTitle: Schema.Attribute.String;
@@ -1253,27 +1254,39 @@ export interface ApiTrustSectionTrustSection
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sectionFourBullets: Schema.Attribute.Component<
+      'trust-section.bullet-item',
+      false
+    >;
     sectionFourDesc: Schema.Attribute.String;
     sectionFourHeading: Schema.Attribute.String;
+    sectionFourImageOne: Schema.Attribute.Media<'images' | 'files'>;
+    sectionFourImageTwo: Schema.Attribute.Media<'images' | 'files'>;
     sectionOneBullets: Schema.Attribute.Component<
       'trust-section.bullet-item',
-      true
+      false
     >;
     sectionOneDesc: Schema.Attribute.String;
     sectionOneHeading: Schema.Attribute.String;
+    sectionOneImageOne: Schema.Attribute.Media<'images' | 'files'>;
+    sectionOneImageTwo: Schema.Attribute.Media<'images' | 'files'>;
     sectionThreeBullets: Schema.Attribute.Component<
       'trust-section.bullet-item',
-      true
+      false
     >;
     sectionThreeDesc: Schema.Attribute.String;
     sectionThreeHeading: Schema.Attribute.String;
+    sectionThreeImageOne: Schema.Attribute.Media<'images' | 'files'>;
+    sectionThreeImageTwo: Schema.Attribute.Media<'images' | 'files'>;
     sectionTitle: Schema.Attribute.String;
     sectionTwoBullets: Schema.Attribute.Component<
       'trust-section.bullet-item',
-      true
+      false
     >;
     sectionTwoDesc: Schema.Attribute.String;
     sectionTwoHeading: Schema.Attribute.String;
+    sectionTwoImageOne: Schema.Attribute.Media<'images' | 'files'>;
+    sectionTwoImageTwo: Schema.Attribute.Media<'images' | 'files'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
