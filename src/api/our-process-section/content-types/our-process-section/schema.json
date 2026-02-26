@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_process_sections",
+  "info": {
+    "singularName": "our-process-section",
+    "pluralName": "our-process-sections",
+    "displayName": "OurProcessSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "string"
+    },
+    "stepOneTitle": {
+      "type": "string"
+    },
+    "stepOneDesc": {
+      "type": "string"
+    },
+    "stepTwoTitle": {
+      "type": "string"
+    },
+    "stepTwoDesc": {
+      "type": "string"
+    },
+    "stepThreeTitle": {
+      "type": "string"
+    },
+    "stepThreeDesc": {
+      "type": "string"
+    }
+  }
+}

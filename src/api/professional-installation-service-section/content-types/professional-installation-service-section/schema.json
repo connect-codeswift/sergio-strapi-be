@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "professional_installation_service_sections",
+  "info": {
+    "singularName": "professional-installation-service-section",
+    "pluralName": "professional-installation-service-sections",
+    "displayName": "ProfessionalInstallationServiceSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "string"
+    },
+    "itemOne": {
+      "type": "string"
+    },
+    "itemTwo": {
+      "type": "string"
+    },
+    "itemThree": {
+      "type": "string"
+    },
+    "itemOneImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "itemTwoImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "itemThreeImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

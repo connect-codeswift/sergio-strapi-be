@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_review_page_review_cards",
+  "info": {
+    "displayName": "Review Card"
+  },
+  "options": {},
+  "attributes": {
+    "Reviewer": {
+      "type": "string"
+    },
+    "ReviewerFrom": {
+      "type": "string"
+    },
+    "Review": {
+      "type": "string"
+    },
+    "starRating": {
+      "type": "integer",
+      "min": 0,
+      "max": 5
+    },
+    "reviewerImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

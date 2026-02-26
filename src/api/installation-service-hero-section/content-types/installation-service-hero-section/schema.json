@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "installation_service_hero_sections",
+  "info": {
+    "singularName": "installation-service-hero-section",
+    "pluralName": "installation-service-hero-sections",
+    "displayName": "InstallationServiceHeroSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "string"
+    },
+    "sectionImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

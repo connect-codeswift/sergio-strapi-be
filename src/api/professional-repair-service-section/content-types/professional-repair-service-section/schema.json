@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "professional_repair_service_sections",
+  "info": {
+    "singularName": "professional-repair-service-section",
+    "pluralName": "professional-repair-service-sections",
+    "displayName": "ProfessionalRepairServiceSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "string"
+    },
+    "itemOne": {
+      "type": "string"
+    },
+    "itemTwo": {
+      "type": "string"
+    },
+    "itemThree": {
+      "type": "string"
+    },
+    "itemOneImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "itemTwoImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "itemThreeImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

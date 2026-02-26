@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "repair_service_hero_sections",
+  "info": {
+    "singularName": "repair-service-hero-section",
+    "pluralName": "repair-service-hero-sections",
+    "displayName": "RepairServiceHeroSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "string"
+    },
+    "sectionImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

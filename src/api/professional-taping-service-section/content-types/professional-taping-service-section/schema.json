@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "professional_taping_service_sections",
+  "info": {
+    "singularName": "professional-taping-service-section",
+    "pluralName": "professional-taping-service-sections",
+    "displayName": "ProfessionalTapingServiceSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "string"
+    },
+    "itemOne": {
+      "type": "string"
+    },
+    "itemTwo": {
+      "type": "string"
+    },
+    "itemThree": {
+      "type": "string"
+    },
+    "itemOneImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "itemTwoImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "itemThreeImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

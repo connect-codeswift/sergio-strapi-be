@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_trust_section_bullet_items",
+  "info": {
+    "displayName": "Bullet Item"
+  },
+  "options": {},
+  "attributes": {
+    "bulletOne": {
+      "type": "string"
+    },
+    "bulletTwo": {
+      "type": "string"
+    },
+    "bulletThree": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

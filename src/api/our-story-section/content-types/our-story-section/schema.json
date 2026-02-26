@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_story_sections",
+  "info": {
+    "singularName": "our-story-section",
+    "pluralName": "our-story-sections",
+    "displayName": "OurStorySection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "text"
+    },
+    "imageOne": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "imageTwo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

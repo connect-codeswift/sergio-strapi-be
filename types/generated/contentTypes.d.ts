@@ -430,6 +430,71 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutUsHeroAboutUsHero extends Struct.CollectionTypeSchema {
+  collectionName: 'about_us_heroes';
+  info: {
+    displayName: 'AboutUsHero';
+    pluralName: 'about-us-heroes';
+    singularName: 'about-us-hero';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-us-hero.about-us-hero'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAboutUsSectionAboutUsSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'about_us_sections';
+  info: {
+    displayName: 'AboutUsSection';
+    pluralName: 'about-us-sections';
+    singularName: 'about-us-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    infoOneTitle: Schema.Attribute.String;
+    infoThreeDesc: Schema.Attribute.String;
+    infoThreeTitle: Schema.Attribute.String;
+    infoTwoDesc: Schema.Attribute.String;
+    infoTwoTitle: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-us-section.about-us-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBlogCategoryBlogCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'blog_categories';
@@ -455,6 +520,892 @@ export interface ApiBlogCategoryBlogCategory
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    displayName: 'Blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    excerpt: Schema.Attribute.String;
+    headingOne: Schema.Attribute.String;
+    headingThree: Schema.Attribute.String;
+    headingTwo: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private;
+    mediaOne: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
+    mediaThree: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
+    mediaTwo: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
+    paragraphOne: Schema.Attribute.Text;
+    paragraphThree: Schema.Attribute.Text;
+    paragraphTwo: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactUsSectionContactUsSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_us_sections';
+  info: {
+    displayName: 'ContactUsSection';
+    pluralName: 'contact-us-sections';
+    singularName: 'contact-us-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactEmail: Schema.Attribute.String;
+    contactNumber: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-us-section.contact-us-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    timing: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHeroSectionHeroSection extends Struct.CollectionTypeSchema {
+  collectionName: 'hero_sections';
+  info: {
+    displayName: 'HeroSection';
+    pluralName: 'hero-sections';
+    singularName: 'hero-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ballText: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaLink: Schema.Attribute.String;
+    ctaText: Schema.Attribute.String;
+    heroImage: Schema.Attribute.Media<'images' | 'files'>;
+    heroVideo: Schema.Attribute.Media<'videos'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hero-section.hero-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    statOneName: Schema.Attribute.String;
+    statOneNumber: Schema.Attribute.String;
+    statThreeName: Schema.Attribute.String;
+    statThreeNumber: Schema.Attribute.String;
+    statTwoName: Schema.Attribute.String;
+    statTwoNumber: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInstallationServiceHeroSectionInstallationServiceHeroSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'installation_service_hero_sections';
+  info: {
+    displayName: 'InstallationServiceHeroSection';
+    pluralName: 'installation-service-hero-sections';
+    singularName: 'installation-service-hero-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::installation-service-hero-section.installation-service-hero-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLeadershipSectionLeadershipSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'leadership_sections';
+  info: {
+    displayName: 'LeadershipSection';
+    pluralName: 'leadership-sections';
+    singularName: 'leadership-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::leadership-section.leadership-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionQuote: Schema.Attribute.Text;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOurApproachSectionOurApproachSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'our_approach_sections';
+  info: {
+    displayName: 'OurApproachSection';
+    pluralName: 'our-approach-sections';
+    singularName: 'our-approach-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imageOne: Schema.Attribute.Media<'images' | 'files'>;
+    imageTwo: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-approach-section.our-approach-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.Text;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOurInstallationProcessSectionOurInstallationProcessSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'our_installation_process_sections';
+  info: {
+    displayName: 'OurInstallationProcessSection';
+    pluralName: 'our-installation-process-sections';
+    singularName: 'our-installation-process-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bulletOneDesc: Schema.Attribute.String;
+    bulletOneTitle: Schema.Attribute.String;
+    bulletThreeDesc: Schema.Attribute.String;
+    bulletThreeTitle: Schema.Attribute.String;
+    bulletTwoDesc: Schema.Attribute.String;
+    bulletTwoTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-installation-process-section.our-installation-process-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionFooter: Schema.Attribute.String;
+    sectionHeader: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOurProcessSectionOurProcessSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'our_process_sections';
+  info: {
+    displayName: 'OurProcessSection';
+    pluralName: 'our-process-sections';
+    singularName: 'our-process-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-process-section.our-process-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    stepOneDesc: Schema.Attribute.String;
+    stepOneTitle: Schema.Attribute.String;
+    stepThreeDesc: Schema.Attribute.String;
+    stepThreeTitle: Schema.Attribute.String;
+    stepTwoDesc: Schema.Attribute.String;
+    stepTwoTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOurRepairProcessSectionOurRepairProcessSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'our_repair_process_sections';
+  info: {
+    displayName: 'OurRepairProcessSection';
+    pluralName: 'our-repair-process-sections';
+    singularName: 'our-repair-process-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bulletOneDesc: Schema.Attribute.String;
+    bulletOneTitle: Schema.Attribute.String;
+    bulletThreeDesc: Schema.Attribute.String;
+    bulletThreeTitle: Schema.Attribute.String;
+    bulletTwoDesc: Schema.Attribute.String;
+    bulletTwoTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imageOne: Schema.Attribute.Media<'files' | 'images'>;
+    imageTwo: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-repair-process-section.our-repair-process-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionFooter: Schema.Attribute.String;
+    sectionHeader: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOurServicesSectionOurServicesSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'our_services_sections';
+  info: {
+    displayName: 'OurServicesSection';
+    pluralName: 'our-services-sections';
+    singularName: 'our-services-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-services-section.our-services-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    serviceOneDesc: Schema.Attribute.Text;
+    serviceOneTitle: Schema.Attribute.String;
+    serviceThreeDesc: Schema.Attribute.Text;
+    ServiceThreeTitle: Schema.Attribute.String;
+    serviceTwoDesc: Schema.Attribute.Text;
+    serviceTwoTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOurStorySectionOurStorySection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'our_story_sections';
+  info: {
+    displayName: 'OurStorySection';
+    pluralName: 'our-story-sections';
+    singularName: 'our-story-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imageOne: Schema.Attribute.Media<'images' | 'files'>;
+    imageTwo: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-story-section.our-story-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.Text;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOurTappingProcessSectionOurTappingProcessSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'our_tapping_process_sections';
+  info: {
+    displayName: 'OurTappingProcessSection';
+    pluralName: 'our-tapping-process-sections';
+    singularName: 'our-tapping-process-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bulletOneDesc: Schema.Attribute.String;
+    bulletOneTitle: Schema.Attribute.String;
+    bulletThreeDesc: Schema.Attribute.String;
+    bulletThreeTitle: Schema.Attribute.String;
+    bulletTwoDesc: Schema.Attribute.String;
+    bulletTwoTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-tapping-process-section.our-tapping-process-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionFooter: Schema.Attribute.String;
+    sectionHeader: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOurTestimonialSectionOurTestimonialSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'our_testimonial_sections';
+  info: {
+    displayName: 'OurTestimonialSection';
+    pluralName: 'our-testimonial-sections';
+    singularName: 'our-testimonial-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::our-testimonial-section.our-testimonial-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    reviewerFour: Schema.Attribute.String;
+    reviewerFourFrom: Schema.Attribute.String;
+    reviewerOne: Schema.Attribute.String;
+    reviewerOneFrom: Schema.Attribute.String;
+    reviewerThree: Schema.Attribute.String;
+    reviewerThreeFrom: Schema.Attribute.String;
+    reviewerTwo: Schema.Attribute.String;
+    reviewerTwoFrom: Schema.Attribute.String;
+    reviewFour: Schema.Attribute.Text;
+    reviewOne: Schema.Attribute.Text;
+    reviewThree: Schema.Attribute.Text;
+    reviewTwo: Schema.Attribute.Text;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    starsFour: Schema.Attribute.Integer;
+    starsOne: Schema.Attribute.Integer;
+    starsThree: Schema.Attribute.Integer;
+    starsTwo: Schema.Attribute.Integer;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProfessionalInstallationServiceSectionProfessionalInstallationServiceSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'professional_installation_service_sections';
+  info: {
+    displayName: 'ProfessionalInstallationServiceSection';
+    pluralName: 'professional-installation-service-sections';
+    singularName: 'professional-installation-service-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    itemOne: Schema.Attribute.String;
+    itemOneImage: Schema.Attribute.Media<'images' | 'files'>;
+    itemThree: Schema.Attribute.String;
+    itemThreeImage: Schema.Attribute.Media<'images' | 'files'>;
+    itemTwo: Schema.Attribute.String;
+    itemTwoImage: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::professional-installation-service-section.professional-installation-service-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProfessionalRepairServiceSectionProfessionalRepairServiceSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'professional_repair_service_sections';
+  info: {
+    displayName: 'ProfessionalRepairServiceSection';
+    pluralName: 'professional-repair-service-sections';
+    singularName: 'professional-repair-service-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    itemOne: Schema.Attribute.String;
+    itemOneImage: Schema.Attribute.Media<'files' | 'images'>;
+    itemThree: Schema.Attribute.String;
+    itemThreeImage: Schema.Attribute.Media<'images' | 'files'>;
+    itemTwo: Schema.Attribute.String;
+    itemTwoImage: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::professional-repair-service-section.professional-repair-service-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProfessionalTapingServiceSectionProfessionalTapingServiceSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'professional_taping_service_sections';
+  info: {
+    displayName: 'ProfessionalTapingServiceSection';
+    pluralName: 'professional-taping-service-sections';
+    singularName: 'professional-taping-service-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    itemOne: Schema.Attribute.String;
+    itemOneImage: Schema.Attribute.Media<'images'>;
+    itemThree: Schema.Attribute.String;
+    itemThreeImage: Schema.Attribute.Media<'images' | 'files'>;
+    itemTwo: Schema.Attribute.String;
+    itemTwoImage: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::professional-taping-service-section.professional-taping-service-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRepairServiceHeroSectionRepairServiceHeroSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'repair_service_hero_sections';
+  info: {
+    displayName: 'RepairServiceHeroSection';
+    pluralName: 'repair-service-hero-sections';
+    singularName: 'repair-service-hero-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::repair-service-hero-section.repair-service-hero-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiReviewReview extends Struct.CollectionTypeSchema {
+  collectionName: 'reviews';
+  info: {
+    displayName: 'Review';
+    pluralName: 'reviews';
+    singularName: 'review';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::review.review'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    review: Schema.Attribute.String;
+    reviewerFrom: Schema.Attribute.String;
+    reviewerImage: Schema.Attribute.Media<'images' | 'files'>;
+    reviewerName: Schema.Attribute.String;
+    starRating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 0;
+        },
+        number
+      >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiReviewsHeroReviewsHero extends Struct.CollectionTypeSchema {
+  collectionName: 'reviews_heroes';
+  info: {
+    displayName: 'ReviewsHero';
+    pluralName: 'reviews-heroes';
+    singularName: 'reviews-hero';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::reviews-hero.reviews-hero'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTappingServiceHeroSectionTappingServiceHeroSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'tapping_service_hero_sections';
+  info: {
+    displayName: 'TappingServiceHeroSection';
+    pluralName: 'tapping-service-hero-sections';
+    singularName: 'tapping-service-hero-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tapping-service-hero-section.tapping-service-hero-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTrustSectionTrustSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'trust_sections';
+  info: {
+    displayName: 'TrustSection';
+    pluralName: 'trust-sections';
+    singularName: 'trust-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::trust-section.trust-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionFourDesc: Schema.Attribute.String;
+    sectionFourHeading: Schema.Attribute.String;
+    sectionOneBullets: Schema.Attribute.Component<
+      'trust-section.bullet-item',
+      true
+    >;
+    sectionOneDesc: Schema.Attribute.String;
+    sectionOneHeading: Schema.Attribute.String;
+    sectionThreeBullets: Schema.Attribute.Component<
+      'trust-section.bullet-item',
+      true
+    >;
+    sectionThreeDesc: Schema.Attribute.String;
+    sectionThreeHeading: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    sectionTwoBullets: Schema.Attribute.Component<
+      'trust-section.bullet-item',
+      true
+    >;
+    sectionTwoDesc: Schema.Attribute.String;
+    sectionTwoHeading: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWhatSetUsApartSectionWhatSetUsApartSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'what_set_us_apart_sections';
+  info: {
+    displayName: 'WhatSetUsApartSection';
+    pluralName: 'what-set-us-apart-sections';
+    singularName: 'what-set-us-apart-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    itemOneDesc: Schema.Attribute.String;
+    itemOneTitle: Schema.Attribute.String;
+    itemThreeDesc: Schema.Attribute.String;
+    itemThreeTitle: Schema.Attribute.String;
+    itemTwoDesc: Schema.Attribute.String;
+    itemTwoTitle: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::what-set-us-apart-section.what-set-us-apart-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWhyProperInstallationWhyProperInstallation
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'why_proper_installations';
+  info: {
+    displayName: 'WhyProperInstallation';
+    pluralName: 'why-proper-installations';
+    singularName: 'why-proper-installation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imageOne: Schema.Attribute.Media<'images' | 'files'>;
+    imageTwo: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::why-proper-installation.why-proper-installation'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.Text;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWhyProperRepairWhyProperRepair
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'why_proper_repairs';
+  info: {
+    displayName: 'WhyProperRepair';
+    pluralName: 'why-proper-repairs';
+    singularName: 'why-proper-repair';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imageOne: Schema.Attribute.Media<'images' | 'files'>;
+    imageTwo: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::why-proper-repair.why-proper-repair'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.Text;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWhyProperTapingWhyProperTaping
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'why_proper_tapings';
+  info: {
+    displayName: 'WhyProperTaping';
+    pluralName: 'why-proper-tapings';
+    singularName: 'why-proper-taping';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imageOne: Schema.Attribute.Media<'images' | 'files'>;
+    imageTwo: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::why-proper-taping.why-proper-taping'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionSubtitle: Schema.Attribute.Text;
+    sectionTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -972,7 +1923,34 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-us-hero.about-us-hero': ApiAboutUsHeroAboutUsHero;
+      'api::about-us-section.about-us-section': ApiAboutUsSectionAboutUsSection;
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
+      'api::blog.blog': ApiBlogBlog;
+      'api::contact-us-section.contact-us-section': ApiContactUsSectionContactUsSection;
+      'api::hero-section.hero-section': ApiHeroSectionHeroSection;
+      'api::installation-service-hero-section.installation-service-hero-section': ApiInstallationServiceHeroSectionInstallationServiceHeroSection;
+      'api::leadership-section.leadership-section': ApiLeadershipSectionLeadershipSection;
+      'api::our-approach-section.our-approach-section': ApiOurApproachSectionOurApproachSection;
+      'api::our-installation-process-section.our-installation-process-section': ApiOurInstallationProcessSectionOurInstallationProcessSection;
+      'api::our-process-section.our-process-section': ApiOurProcessSectionOurProcessSection;
+      'api::our-repair-process-section.our-repair-process-section': ApiOurRepairProcessSectionOurRepairProcessSection;
+      'api::our-services-section.our-services-section': ApiOurServicesSectionOurServicesSection;
+      'api::our-story-section.our-story-section': ApiOurStorySectionOurStorySection;
+      'api::our-tapping-process-section.our-tapping-process-section': ApiOurTappingProcessSectionOurTappingProcessSection;
+      'api::our-testimonial-section.our-testimonial-section': ApiOurTestimonialSectionOurTestimonialSection;
+      'api::professional-installation-service-section.professional-installation-service-section': ApiProfessionalInstallationServiceSectionProfessionalInstallationServiceSection;
+      'api::professional-repair-service-section.professional-repair-service-section': ApiProfessionalRepairServiceSectionProfessionalRepairServiceSection;
+      'api::professional-taping-service-section.professional-taping-service-section': ApiProfessionalTapingServiceSectionProfessionalTapingServiceSection;
+      'api::repair-service-hero-section.repair-service-hero-section': ApiRepairServiceHeroSectionRepairServiceHeroSection;
+      'api::review.review': ApiReviewReview;
+      'api::reviews-hero.reviews-hero': ApiReviewsHeroReviewsHero;
+      'api::tapping-service-hero-section.tapping-service-hero-section': ApiTappingServiceHeroSectionTappingServiceHeroSection;
+      'api::trust-section.trust-section': ApiTrustSectionTrustSection;
+      'api::what-set-us-apart-section.what-set-us-apart-section': ApiWhatSetUsApartSectionWhatSetUsApartSection;
+      'api::why-proper-installation.why-proper-installation': ApiWhyProperInstallationWhyProperInstallation;
+      'api::why-proper-repair.why-proper-repair': ApiWhyProperRepairWhyProperRepair;
+      'api::why-proper-taping.why-proper-taping': ApiWhyProperTapingWhyProperTaping;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

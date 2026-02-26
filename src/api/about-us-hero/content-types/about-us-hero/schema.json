@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_us_heroes",
+  "info": {
+    "singularName": "about-us-hero",
+    "pluralName": "about-us-heroes",
+    "displayName": "AboutUsHero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "string"
+    },
+    "sectionImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

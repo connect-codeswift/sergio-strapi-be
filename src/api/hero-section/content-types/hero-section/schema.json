@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hero_sections",
+  "info": {
+    "singularName": "hero-section",
+    "pluralName": "hero-sections",
+    "displayName": "HeroSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaLink": {
+      "type": "string"
+    },
+    "statOneName": {
+      "type": "string"
+    },
+    "statOneNumber": {
+      "type": "string"
+    },
+    "statTwoName": {
+      "type": "string"
+    },
+    "statTwoNumber": {
+      "type": "string"
+    },
+    "statThreeName": {
+      "type": "string"
+    },
+    "statThreeNumber": {
+      "type": "string"
+    },
+    "ballText": {
+      "type": "string"
+    },
+    "heroVideo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

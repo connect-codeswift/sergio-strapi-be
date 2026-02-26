@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trust_sections",
+  "info": {
+    "singularName": "trust-section",
+    "pluralName": "trust-sections",
+    "displayName": "TrustSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionOneHeading": {
+      "type": "string"
+    },
+    "sectionTwoHeading": {
+      "type": "string"
+    },
+    "sectionThreeHeading": {
+      "type": "string"
+    },
+    "sectionFourHeading": {
+      "type": "string"
+    },
+    "sectionOneDesc": {
+      "type": "string"
+    },
+    "sectionTwoDesc": {
+      "type": "string"
+    },
+    "sectionThreeDesc": {
+      "type": "string"
+    },
+    "sectionFourDesc": {
+      "type": "string"
+    },
+    "sectionOneBullets": {
+      "type": "component",
+      "component": "trust-section.bullet-item",
+      "repeatable": true
+    },
+    "sectionTwoBullets": {
+      "type": "component",
+      "component": "trust-section.bullet-item",
+      "repeatable": true
+    },
+    "sectionThreeBullets": {
+      "type": "component",
+      "component": "trust-section.bullet-item",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "singularName": "review",
+    "pluralName": "reviews",
+    "displayName": "Review"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reviewerName": {
+      "type": "string"
+    },
+    "reviewerFrom": {
+      "type": "string"
+    },
+    "review": {
+      "type": "string"
+    },
+    "starRating": {
+      "type": "integer",
+      "min": 0,
+      "max": 5
+    },
+    "reviewerImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leadership_sections",
+  "info": {
+    "singularName": "leadership-section",
+    "pluralName": "leadership-sections",
+    "displayName": "LeadershipSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "string"
+    },
+    "sectionQuote": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_installation_process_sections",
+  "info": {
+    "singularName": "our-installation-process-section",
+    "pluralName": "our-installation-process-sections",
+    "displayName": "OurInstallationProcessSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionHeader": {
+      "type": "string"
+    },
+    "sectionFooter": {
+      "type": "string"
+    },
+    "bulletOneTitle": {
+      "type": "string"
+    },
+    "bulletTwoTitle": {
+      "type": "string"
+    },
+    "bulletThreeTitle": {
+      "type": "string"
+    },
+    "bulletOneDesc": {
+      "type": "string"
+    },
+    "bulletTwoDesc": {
+      "type": "string"
+    },
+    "bulletThreeDesc": {
+      "type": "string"
+    }
+  }
+}

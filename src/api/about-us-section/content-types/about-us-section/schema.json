@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_us_sections",
+  "info": {
+    "singularName": "about-us-section",
+    "pluralName": "about-us-sections",
+    "displayName": "AboutUsSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "string"
+    },
+    "infoOneTitle": {
+      "type": "string"
+    },
+    "infoTwoTitle": {
+      "type": "string"
+    },
+    "infoTwoDesc": {
+      "type": "string"
+    },
+    "infoThreeTitle": {
+      "type": "string"
+    },
+    "infoThreeDesc": {
+      "type": "string"
+    }
+  }
+}

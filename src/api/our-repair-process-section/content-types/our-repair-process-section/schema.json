@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_repair_process_sections",
+  "info": {
+    "singularName": "our-repair-process-section",
+    "pluralName": "our-repair-process-sections",
+    "displayName": "OurRepairProcessSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionHeader": {
+      "type": "string"
+    },
+    "sectionFooter": {
+      "type": "string"
+    },
+    "bulletOneTitle": {
+      "type": "string"
+    },
+    "bulletOneDesc": {
+      "type": "string"
+    },
+    "bulletTwoTitle": {
+      "type": "string"
+    },
+    "bulletTwoDesc": {
+      "type": "string"
+    },
+    "bulletThreeTitle": {
+      "type": "string"
+    },
+    "bulletThreeDesc": {
+      "type": "string"
+    },
+    "imageOne": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "imageTwo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "what_set_us_apart_sections",
+  "info": {
+    "singularName": "what-set-us-apart-section",
+    "pluralName": "what-set-us-apart-sections",
+    "displayName": "WhatSetUsApartSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "string"
+    },
+    "itemOneTitle": {
+      "type": "string"
+    },
+    "itemTwoTitle": {
+      "type": "string"
+    },
+    "itemThreeTitle": {
+      "type": "string"
+    },
+    "itemOneDesc": {
+      "type": "string"
+    },
+    "itemTwoDesc": {
+      "type": "string"
+    },
+    "itemThreeDesc": {
+      "type": "string"
+    }
+  }
+}
