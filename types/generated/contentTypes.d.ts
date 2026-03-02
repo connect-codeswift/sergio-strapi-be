@@ -1074,6 +1074,37 @@ export interface ApiOurTestimonialSectionOurTestimonialSection
   };
 }
 
+export interface ApiPortfolioPagePortfolioPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'portfolio_pages';
+  info: {
+    displayName: 'PortfolioPage';
+    pluralName: 'portfolio-pages';
+    singularName: 'portfolio-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio-page.portfolio-page'
+    > &
+      Schema.Attribute.Private;
+    portfolioFile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProfessionalInstallationServiceSectionProfessionalInstallationServiceSection
   extends Struct.CollectionTypeSchema {
   collectionName: 'professional_installation_service_sections';
@@ -2071,6 +2102,7 @@ declare module '@strapi/strapi' {
       'api::our-story-section.our-story-section': ApiOurStorySectionOurStorySection;
       'api::our-tapping-process-section.our-tapping-process-section': ApiOurTappingProcessSectionOurTappingProcessSection;
       'api::our-testimonial-section.our-testimonial-section': ApiOurTestimonialSectionOurTestimonialSection;
+      'api::portfolio-page.portfolio-page': ApiPortfolioPagePortfolioPage;
       'api::professional-installation-service-section.professional-installation-service-section': ApiProfessionalInstallationServiceSectionProfessionalInstallationServiceSection;
       'api::professional-repair-service-section.professional-repair-service-section': ApiProfessionalRepairServiceSectionProfessionalRepairServiceSection;
       'api::professional-taping-service-section.professional-taping-service-section': ApiProfessionalTapingServiceSectionProfessionalTapingServiceSection;
