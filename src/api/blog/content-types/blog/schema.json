@@ -25,49 +25,21 @@
         "files"
       ]
     },
-    "headingOne": {
-      "type": "string"
+    "blog_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::blog-category.blog-category",
+      "inversedBy": "blogs"
     },
-    "headingTwo": {
-      "type": "string"
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     },
-    "headingThree": {
-      "type": "string"
-    },
-    "paragraphOne": {
-      "type": "text"
-    },
-    "paragraphTwo": {
-      "type": "text"
-    },
-    "paragraphThree": {
-      "type": "text"
-    },
-    "mediaOne": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ]
-    },
-    "mediaTwo": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ]
-    },
-    "mediaThree": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "blog-component.text-block",
+        "blog-component.image-block"
       ]
     }
   }

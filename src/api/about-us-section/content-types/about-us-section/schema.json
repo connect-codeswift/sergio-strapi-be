@@ -23,14 +23,33 @@
     "infoTwoTitle": {
       "type": "string"
     },
-    "infoTwoDesc": {
+    "infoThreeTitle": {
       "type": "string"
     },
-    "infoThreeTitle": {
+    "infoOneDesc": {
+      "type": "string"
+    },
+    "infoTwoDesc": {
       "type": "string"
     },
     "infoThreeDesc": {
       "type": "string"
+    },
+    "imageOne": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "imageTwo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }

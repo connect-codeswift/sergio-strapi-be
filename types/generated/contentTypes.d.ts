@@ -452,6 +452,7 @@ export interface ApiAboutUsHeroAboutUsHero extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionName: Schema.Attribute.String;
     sectionSubtitle: Schema.Attribute.String;
     sectionTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -475,6 +476,9 @@ export interface ApiAboutUsSectionAboutUsSection
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    imageOne: Schema.Attribute.Media<'files' | 'images'>;
+    imageTwo: Schema.Attribute.Media<'images' | 'files'>;
+    infoOneDesc: Schema.Attribute.String;
     infoOneTitle: Schema.Attribute.String;
     infoThreeDesc: Schema.Attribute.String;
     infoThreeTitle: Schema.Attribute.String;
@@ -507,6 +511,7 @@ export interface ApiBlogCategoryBlogCategory
     draftAndPublish: true;
   };
   attributes: {
+    blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -537,25 +542,57 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    blog_category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::blog-category.blog-category'
+    >;
+    content: Schema.Attribute.DynamicZone<
+      ['blog-component.text-block', 'blog-component.image-block']
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     excerpt: Schema.Attribute.String;
-    headingOne: Schema.Attribute.String;
-    headingThree: Schema.Attribute.String;
-    headingTwo: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
-    mediaOne: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
-    mediaThree: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
-    mediaTwo: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
-    paragraphOne: Schema.Attribute.Text;
-    paragraphThree: Schema.Attribute.Text;
-    paragraphTwo: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactUsFormContactUsForm
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_us_forms';
+  info: {
+    displayName: 'ContactUsForm';
+    pluralName: 'contact-us-forms';
+    singularName: 'contact-us-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    companyName: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    emailAddress: Schema.Attribute.String;
+    fullName: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-us-form.contact-us-form'
+    > &
+      Schema.Attribute.Private;
+    phoneNumber: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -589,6 +626,39 @@ export interface ApiContactUsSectionContactUsSection
     sectionSubtitle: Schema.Attribute.String;
     sectionTitle: Schema.Attribute.String;
     timing: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGetInTouchFormGetInTouchForm
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'get_in_touch_forms';
+  info: {
+    displayName: 'GetInTouchForm';
+    pluralName: 'get-in-touch-forms';
+    singularName: 'get-in-touch-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    companyName: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    emailAddress: Schema.Attribute.String;
+    fullName: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::get-in-touch-form.get-in-touch-form'
+    > &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    subject: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -658,6 +728,7 @@ export interface ApiInstallationServiceHeroSectionInstallationServiceHeroSection
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionName: Schema.Attribute.String;
     sectionSubtitle: Schema.Attribute.String;
     sectionTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -688,6 +759,7 @@ export interface ApiLeadershipSectionLeadershipSection
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sectionImage: Schema.Attribute.Media<'images'>;
     sectionQuote: Schema.Attribute.Text;
     sectionSubtitle: Schema.Attribute.String;
     sectionTitle: Schema.Attribute.String;
@@ -750,6 +822,8 @@ export interface ApiOurInstallationProcessSectionOurInstallationProcessSection
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    imageOne: Schema.Attribute.Media<'images' | 'files'>;
+    imageTwo: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -788,6 +862,7 @@ export interface ApiOurProcessSectionOurProcessSection
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sectionImage: Schema.Attribute.Media<'images' | 'files'>;
     sectionSubtitle: Schema.Attribute.String;
     sectionTitle: Schema.Attribute.String;
     stepOneDesc: Schema.Attribute.String;
@@ -930,6 +1005,8 @@ export interface ApiOurTappingProcessSectionOurTappingProcessSection
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    imageOne: Schema.Attribute.Media<'images' | 'files'>;
+    imageTwo: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -970,16 +1047,21 @@ export interface ApiOurTestimonialSectionOurTestimonialSection
     publishedAt: Schema.Attribute.DateTime;
     reviewerFour: Schema.Attribute.String;
     reviewerFourFrom: Schema.Attribute.String;
+    reviewerFourImage: Schema.Attribute.Media<'images' | 'files'>;
     reviewerOne: Schema.Attribute.String;
     reviewerOneFrom: Schema.Attribute.String;
+    reviewerOneImage: Schema.Attribute.Media<'files' | 'images'>;
     reviewerThree: Schema.Attribute.String;
     reviewerThreeFrom: Schema.Attribute.String;
+    reviewerThreeImage: Schema.Attribute.Media<'images' | 'files'>;
     reviewerTwo: Schema.Attribute.String;
     reviewerTwoFrom: Schema.Attribute.String;
+    reviewerTwoImage: Schema.Attribute.Media<'images' | 'files'>;
     reviewFour: Schema.Attribute.Text;
     reviewOne: Schema.Attribute.Text;
     reviewThree: Schema.Attribute.Text;
     reviewTwo: Schema.Attribute.Text;
+    sectionImage: Schema.Attribute.Media<'images' | 'files'>;
     sectionSubtitle: Schema.Attribute.String;
     sectionTitle: Schema.Attribute.String;
     starsFour: Schema.Attribute.Integer;
@@ -1123,6 +1205,7 @@ export interface ApiRepairServiceHeroSectionRepairServiceHeroSection
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionName: Schema.Attribute.String;
     sectionSubtitle: Schema.Attribute.String;
     sectionTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1192,7 +1275,38 @@ export interface ApiReviewsHeroReviewsHero extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionName: Schema.Attribute.String;
     sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceAreaSectionServiceAreaSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'service_area_sections';
+  info: {
+    displayName: 'ServiceAreaSection';
+    pluralName: 'service-area-sections';
+    singularName: 'service-area-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-area-section.service-area-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionImages: Schema.Attribute.Media<'images' | 'files', true>;
     sectionTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1223,6 +1337,7 @@ export interface ApiTappingServiceHeroSectionTappingServiceHeroSection
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionName: Schema.Attribute.String;
     sectionSubtitle: Schema.Attribute.String;
     sectionTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1253,27 +1368,39 @@ export interface ApiTrustSectionTrustSection
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sectionFourBullets: Schema.Attribute.Component<
+      'trust-section.bullet-item',
+      false
+    >;
     sectionFourDesc: Schema.Attribute.String;
     sectionFourHeading: Schema.Attribute.String;
+    sectionFourImageOne: Schema.Attribute.Media<'images' | 'files'>;
+    sectionFourImageTwo: Schema.Attribute.Media<'images' | 'files'>;
     sectionOneBullets: Schema.Attribute.Component<
       'trust-section.bullet-item',
-      true
+      false
     >;
     sectionOneDesc: Schema.Attribute.String;
     sectionOneHeading: Schema.Attribute.String;
+    sectionOneImageOne: Schema.Attribute.Media<'images' | 'files'>;
+    sectionOneImageTwo: Schema.Attribute.Media<'images' | 'files'>;
     sectionThreeBullets: Schema.Attribute.Component<
       'trust-section.bullet-item',
-      true
+      false
     >;
     sectionThreeDesc: Schema.Attribute.String;
     sectionThreeHeading: Schema.Attribute.String;
+    sectionThreeImageOne: Schema.Attribute.Media<'images' | 'files'>;
+    sectionThreeImageTwo: Schema.Attribute.Media<'images' | 'files'>;
     sectionTitle: Schema.Attribute.String;
     sectionTwoBullets: Schema.Attribute.Component<
       'trust-section.bullet-item',
-      true
+      false
     >;
     sectionTwoDesc: Schema.Attribute.String;
     sectionTwoHeading: Schema.Attribute.String;
+    sectionTwoImageOne: Schema.Attribute.Media<'images' | 'files'>;
+    sectionTwoImageTwo: Schema.Attribute.Media<'images' | 'files'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1340,7 +1467,8 @@ export interface ApiWhyProperInstallationWhyProperInstallation
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    sectionSubtitle: Schema.Attribute.Text;
+    sectionSubtitleOne: Schema.Attribute.Text;
+    sectionSubtitleTwo: Schema.Attribute.Text;
     sectionTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1372,7 +1500,8 @@ export interface ApiWhyProperRepairWhyProperRepair
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    sectionSubtitle: Schema.Attribute.Text;
+    sectionSubtitleOne: Schema.Attribute.Text;
+    sectionSubtitleTwo: Schema.Attribute.Text;
     sectionTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1404,7 +1533,8 @@ export interface ApiWhyProperTapingWhyProperTaping
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    sectionSubtitle: Schema.Attribute.Text;
+    sectionSubtitleOne: Schema.Attribute.Text;
+    sectionSubtitleTwo: Schema.Attribute.Text;
     sectionTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1927,7 +2057,9 @@ declare module '@strapi/strapi' {
       'api::about-us-section.about-us-section': ApiAboutUsSectionAboutUsSection;
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::blog.blog': ApiBlogBlog;
+      'api::contact-us-form.contact-us-form': ApiContactUsFormContactUsForm;
       'api::contact-us-section.contact-us-section': ApiContactUsSectionContactUsSection;
+      'api::get-in-touch-form.get-in-touch-form': ApiGetInTouchFormGetInTouchForm;
       'api::hero-section.hero-section': ApiHeroSectionHeroSection;
       'api::installation-service-hero-section.installation-service-hero-section': ApiInstallationServiceHeroSectionInstallationServiceHeroSection;
       'api::leadership-section.leadership-section': ApiLeadershipSectionLeadershipSection;
@@ -1945,6 +2077,7 @@ declare module '@strapi/strapi' {
       'api::repair-service-hero-section.repair-service-hero-section': ApiRepairServiceHeroSectionRepairServiceHeroSection;
       'api::review.review': ApiReviewReview;
       'api::reviews-hero.reviews-hero': ApiReviewsHeroReviewsHero;
+      'api::service-area-section.service-area-section': ApiServiceAreaSectionServiceAreaSection;
       'api::tapping-service-hero-section.tapping-service-hero-section': ApiTappingServiceHeroSectionTappingServiceHeroSection;
       'api::trust-section.trust-section': ApiTrustSectionTrustSection;
       'api::what-set-us-apart-section.what-set-us-apart-section': ApiWhatSetUsApartSectionWhatSetUsApartSection;
