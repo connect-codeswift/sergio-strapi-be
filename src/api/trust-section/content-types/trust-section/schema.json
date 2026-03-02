@@ -41,17 +41,86 @@
     "sectionOneBullets": {
       "type": "component",
       "component": "trust-section.bullet-item",
-      "repeatable": true
+      "repeatable": false
     },
     "sectionTwoBullets": {
       "type": "component",
       "component": "trust-section.bullet-item",
-      "repeatable": true
+      "repeatable": false
     },
     "sectionThreeBullets": {
       "type": "component",
       "component": "trust-section.bullet-item",
-      "repeatable": true
+      "repeatable": false
+    },
+    "sectionFourBullets": {
+      "type": "component",
+      "component": "trust-section.bullet-item",
+      "repeatable": false
+    },
+    "sectionOneImageOne": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "sectionOneImageTwo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "sectionTwoImageOne": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "sectionTwoImageTwo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "sectionThreeImageOne": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "sectionThreeImageTwo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "sectionFourImageOne": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "sectionFourImageTwo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }
