@@ -27,13 +27,13 @@
       "type": "string"
     },
     "infoOneDesc": {
-      "type": "string"
+      "type": "text"
     },
     "infoTwoDesc": {
-      "type": "string"
+      "type": "text"
     },
     "infoThreeDesc": {
-      "type": "string"
+      "type": "text"
     },
     "imageOne": {
       "type": "media",
