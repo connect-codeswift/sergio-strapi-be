@@ -478,11 +478,11 @@ export interface ApiAboutUsSectionAboutUsSection
       Schema.Attribute.Private;
     imageOne: Schema.Attribute.Media<'files' | 'images'>;
     imageTwo: Schema.Attribute.Media<'images' | 'files'>;
-    infoOneDesc: Schema.Attribute.String;
+    infoOneDesc: Schema.Attribute.Text;
     infoOneTitle: Schema.Attribute.String;
-    infoThreeDesc: Schema.Attribute.String;
+    infoThreeDesc: Schema.Attribute.Text;
     infoThreeTitle: Schema.Attribute.String;
-    infoTwoDesc: Schema.Attribute.String;
+    infoTwoDesc: Schema.Attribute.Text;
     infoTwoTitle: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
