@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "get_in_touch_forms",
+  "info": {
+    "singularName": "get-in-touch-form",
+    "pluralName": "get-in-touch-forms",
+    "displayName": "GetInTouchForm"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "emailAddress": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}

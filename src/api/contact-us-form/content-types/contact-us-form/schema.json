@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_us_forms",
+  "info": {
+    "singularName": "contact-us-form",
+    "pluralName": "contact-us-forms",
+    "displayName": "ContactUsForm"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "emailAddress": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

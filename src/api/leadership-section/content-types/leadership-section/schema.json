@@ -19,6 +19,13 @@
     },
     "sectionQuote": {
       "type": "text"
+    },
+    "sectionImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
