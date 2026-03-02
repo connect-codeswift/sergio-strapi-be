@@ -34,6 +34,22 @@
     },
     "infoThreeDesc": {
       "type": "string"
+    },
+    "imageOne": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "imageTwo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }

@@ -14,7 +14,7 @@
     "sectionTitle": {
       "type": "string"
     },
-    "sectionSubtitle": {
+    "sectionSubtitleOne": {
       "type": "text"
     },
     "imageOne": {
@@ -32,6 +32,9 @@
         "images",
         "files"
       ]
+    },
+    "sectionSubtitleTwo": {
+      "type": "text"
     }
   }
 }

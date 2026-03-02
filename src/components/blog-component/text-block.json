@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blog_component_text_blocks",
+  "info": {
+    "displayName": "contentBlock"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionContent": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

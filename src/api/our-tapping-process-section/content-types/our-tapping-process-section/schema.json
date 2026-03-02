@@ -37,6 +37,22 @@
     },
     "bulletThreeDesc": {
       "type": "string"
+    },
+    "imageOne": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "imageTwo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }
