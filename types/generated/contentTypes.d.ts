@@ -599,6 +599,38 @@ export interface ApiContactUsFormContactUsForm
   };
 }
 
+export interface ApiContactUsHeroSectionContactUsHeroSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_us_hero_sections';
+  info: {
+    displayName: 'ContactUsHeroSection';
+    pluralName: 'contact-us-hero-sections';
+    singularName: 'contact-us-hero-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-us-hero-section.contact-us-hero-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionName: Schema.Attribute.String;
+    sectionSubtitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactUsSectionContactUsSection
   extends Struct.CollectionTypeSchema {
   collectionName: 'contact_us_sections';
@@ -2089,6 +2121,7 @@ declare module '@strapi/strapi' {
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::blog.blog': ApiBlogBlog;
       'api::contact-us-form.contact-us-form': ApiContactUsFormContactUsForm;
+      'api::contact-us-hero-section.contact-us-hero-section': ApiContactUsHeroSectionContactUsHeroSection;
       'api::contact-us-section.contact-us-section': ApiContactUsSectionContactUsSection;
       'api::get-in-touch-form.get-in-touch-form': ApiGetInTouchFormGetInTouchForm;
       'api::hero-section.hero-section': ApiHeroSectionHeroSection;
