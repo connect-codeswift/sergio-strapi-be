@@ -49,6 +49,9 @@
         "images",
         "files"
       ]
+    },
+    "bulletReason": {
+      "type": "string"
     }
   }
 }

@@ -21,6 +21,9 @@
         "images",
         "files"
       ]
+    },
+    "cityNames": {
+      "type": "json"
     }
   }
 }

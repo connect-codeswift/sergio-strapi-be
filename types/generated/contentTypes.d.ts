@@ -1149,6 +1149,7 @@ export interface ApiProfessionalInstallationServiceSectionProfessionalInstallati
     draftAndPublish: true;
   };
   attributes: {
+    bulletReason: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1185,6 +1186,7 @@ export interface ApiProfessionalRepairServiceSectionProfessionalRepairServiceSec
     draftAndPublish: true;
   };
   attributes: {
+    bulletReason: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1221,6 +1223,7 @@ export interface ApiProfessionalTapingServiceSectionProfessionalTapingServiceSec
     draftAndPublish: true;
   };
   attributes: {
+    bulletReason: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1298,11 +1301,13 @@ export interface ApiReviewReview extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    review: Schema.Attribute.String;
-    reviewerFrom: Schema.Attribute.String;
-    reviewerImage: Schema.Attribute.Media<'images' | 'files'>;
-    reviewerName: Schema.Attribute.String;
+    review: Schema.Attribute.String & Schema.Attribute.Required;
+    reviewerFrom: Schema.Attribute.String & Schema.Attribute.Required;
+    reviewerImage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    reviewerName: Schema.Attribute.String & Schema.Attribute.Required;
     starRating: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
         {
           max: 5;
@@ -1359,6 +1364,7 @@ export interface ApiServiceAreaSectionServiceAreaSection
     draftAndPublish: true;
   };
   attributes: {
+    cityNames: Schema.Attribute.JSON;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
