@@ -12,22 +12,27 @@
   "pluginOptions": {},
   "attributes": {
     "reviewerName": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "reviewerFrom": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "review": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "starRating": {
       "type": "integer",
+      "required": true,
       "min": 0,
       "max": 5
     },
     "reviewerImage": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
