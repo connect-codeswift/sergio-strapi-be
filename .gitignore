@@ -126,3 +126,10 @@ dist
 build
 .strapi-updater.json
 .strapi-cloud.json
+
+
+exports/
+*.tar.gz
+*.tar.gz.enc
+.tmp/
+*.db
