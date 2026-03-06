@@ -29,17 +29,29 @@
     "itemOneImage": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images", "files"]
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     },
     "itemTwoImage": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images", "files"]
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     },
     "itemThreeImage": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images", "files"]
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "bulletReason": {
+      "type": "string"
     }
   }
 }
