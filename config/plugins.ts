@@ -24,6 +24,11 @@ const config = ({
       },
     },
   },
+
+  // Disable strapi-import-export plugin (incompatible with Strapi v5 admin)
+  "strapi-import-export": {
+    enabled: false,
+  },
 });
 
 export default config;
