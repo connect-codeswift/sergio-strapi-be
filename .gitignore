@@ -129,3 +129,11 @@ build
 
 *tar.gz.enc
 .tmp
+
+exports/
+*.tar.gz
+*.tar.gz.enc
+.tmp/
+*.db
+
+.gitkeep
