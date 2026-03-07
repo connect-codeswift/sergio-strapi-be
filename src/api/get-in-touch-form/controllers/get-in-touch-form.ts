@@ -24,8 +24,8 @@ export default factories.createCoreController(
             <h2>New Get In Touch Form Submission</h2>
             <p><strong>Full Name:</strong> ${fullName || 'N/A'}</p>
             <p><strong>Email Address:</strong> ${emailAddress || 'N/A'}</p>
-            <p><strong>Company Name:</strong> ${companyName || 'N/A'}</p>
-            <p><strong>Subject:</strong> ${subject || 'N/A'}</p>
+            <p><strong>Phone Number:</strong> ${companyName || 'N/A'}</p>
+            <p><strong>How did you hear about us?:</strong> ${subject || 'N/A'}</p>
             <p><strong>Message:</strong> ${message || 'N/A'}</p>
           `,
         });

@@ -26,7 +26,7 @@ export default factories.createCoreController(
             <p><strong>Email Address:</strong> ${emailAddress || 'N/A'}</p>
             <p><strong>Company Name:</strong> ${companyName || 'N/A'}</p>
             <p><strong>Phone Number:</strong> ${phoneNumber || 'N/A'}</p>
-            <p><strong>Description:</strong> ${Description || 'N/A'}</p>
+            <p><strong>Message:</strong> ${Description || 'N/A'}</p>
           `,
         });
       } catch (error) {
