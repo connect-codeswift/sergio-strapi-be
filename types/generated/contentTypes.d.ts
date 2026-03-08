@@ -970,6 +970,9 @@ export interface ApiOurServicesSectionOurServicesSection
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sectionImageOne: Schema.Attribute.Media<'images' | 'files'>;
+    sectionImageThree: Schema.Attribute.Media<'images' | 'files'>;
+    sectionImageTwo: Schema.Attribute.Media<'images' | 'files'>;
     sectionSubtitle: Schema.Attribute.String;
     sectionTitle: Schema.Attribute.String;
     serviceOneDesc: Schema.Attribute.Text;
