@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolio_card_sections",
+  "info": {
+    "singularName": "portfolio-card-section",
+    "pluralName": "portfolio-card-sections",
+    "displayName": "PortfolioCardSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cardTitle": {
+      "type": "string"
+    },
+    "cardImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}
