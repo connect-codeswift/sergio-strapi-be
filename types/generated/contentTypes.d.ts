@@ -1109,6 +1109,68 @@ export interface ApiOurTestimonialSectionOurTestimonialSection
   };
 }
 
+export interface ApiPortfolioCardSectionPortfolioCardSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'portfolio_card_sections';
+  info: {
+    displayName: 'PortfolioCardSection';
+    pluralName: 'portfolio-card-sections';
+    singularName: 'portfolio-card-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cardImage: Schema.Attribute.Media<'images' | 'files'>;
+    cardTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio-card-section.portfolio-card-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPortfolioHeroSectionPortfolioHeroSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'portfolio_hero_sections';
+  info: {
+    displayName: 'PortfolioHeroSection';
+    pluralName: 'portfolio-hero-sections';
+    singularName: 'portfolio-hero-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio-hero-section.portfolio-hero-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionImage: Schema.Attribute.Media<'images' | 'files'>;
+    sectionName: Schema.Attribute.String;
+    sectionSubtitle: Schema.Attribute.Text;
+    sectionTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPortfolioPagePortfolioPage
   extends Struct.CollectionTypeSchema {
   collectionName: 'portfolio_pages';
@@ -2144,6 +2206,8 @@ declare module '@strapi/strapi' {
       'api::our-story-section.our-story-section': ApiOurStorySectionOurStorySection;
       'api::our-tapping-process-section.our-tapping-process-section': ApiOurTappingProcessSectionOurTappingProcessSection;
       'api::our-testimonial-section.our-testimonial-section': ApiOurTestimonialSectionOurTestimonialSection;
+      'api::portfolio-card-section.portfolio-card-section': ApiPortfolioCardSectionPortfolioCardSection;
+      'api::portfolio-hero-section.portfolio-hero-section': ApiPortfolioHeroSectionPortfolioHeroSection;
       'api::portfolio-page.portfolio-page': ApiPortfolioPagePortfolioPage;
       'api::professional-installation-service-section.professional-installation-service-section': ApiProfessionalInstallationServiceSectionProfessionalInstallationServiceSection;
       'api::professional-repair-service-section.professional-repair-service-section': ApiProfessionalRepairServiceSectionProfessionalRepairServiceSection;

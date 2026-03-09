@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolio_hero_sections",
+  "info": {
+    "singularName": "portfolio-hero-section",
+    "pluralName": "portfolio-hero-sections",
+    "displayName": "PortfolioHeroSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionName": {
+      "type": "string"
+    },
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "type": "text"
+    },
+    "sectionImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}
