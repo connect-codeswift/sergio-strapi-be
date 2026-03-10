@@ -10,12 +10,7 @@ const config: Core.Config.Middlewares = [
   'strapi::body',
   'strapi::session',
   'strapi::favicon',
-  {
-    name: 'strapi::public',
-    config: {
-      maxAge: 60000, // 60,000ms = 1 minute
-    },
-  },
+  'strapi::public'
 ];
 
 export default config;
