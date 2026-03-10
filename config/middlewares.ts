@@ -13,7 +13,7 @@ const config: Core.Config.Middlewares = [
   {
     name: 'strapi::public',
     config: {
-      maxAge: 60000, // 60,000ms = 1 minute
+      maxAge: 60000,
     },
   },
 ];
