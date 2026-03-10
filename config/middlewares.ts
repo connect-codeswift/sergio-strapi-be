@@ -10,7 +10,6 @@ const config: Core.Config.Middlewares = [
   'strapi::body',
   'strapi::session',
   'strapi::favicon',
-  'strapi::public',
   {
     name: 'strapi::public',
     config: {
