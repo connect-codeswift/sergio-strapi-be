@@ -39,7 +39,8 @@
       "type": "dynamiczone",
       "components": [
         "blog-component.text-block",
-        "blog-component.image-block"
+        "blog-component.image-block",
+        "blog-component.faqs-block"
       ]
     }
   }
