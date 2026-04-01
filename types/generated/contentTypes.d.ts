@@ -547,7 +547,11 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
       'api::blog-category.blog-category'
     >;
     content: Schema.Attribute.DynamicZone<
-      ['blog-component.text-block', 'blog-component.image-block']
+      [
+        'blog-component.text-block',
+        'blog-component.image-block',
+        'blog-component.faqs-block',
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

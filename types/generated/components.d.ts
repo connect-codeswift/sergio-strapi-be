@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlogComponentFaqsBlock extends Struct.ComponentSchema {
+  collectionName: 'components_blog_component_faqs_blocks';
+  info: {
+    displayName: 'faqsBlock';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    question: Schema.Attribute.Text;
+  };
+}
+
 export interface BlogComponentImageBlock extends Struct.ComponentSchema {
   collectionName: 'components_blog_component_image_blocks';
   info: {
@@ -18,7 +29,6 @@ export interface BlogComponentTextBlock extends Struct.ComponentSchema {
   };
   attributes: {
     sectionContent: Schema.Attribute.Blocks;
-    sectionTitle: Schema.Attribute.String;
   };
 }
 
@@ -58,6 +68,7 @@ export interface TrustSectionBulletItem extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blog-component.faqs-block': BlogComponentFaqsBlock;
       'blog-component.image-block': BlogComponentImageBlock;
       'blog-component.text-block': BlogComponentTextBlock;
       'review-page.review-card': ReviewPageReviewCard;
