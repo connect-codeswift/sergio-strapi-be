@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blog_component_faqs_blocks",
+  "info": {
+    "displayName": "faqsBlock"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "answer": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
