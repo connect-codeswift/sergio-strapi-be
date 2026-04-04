@@ -38,6 +38,17 @@ export default factories.createCoreController(
             <p><strong>Message:</strong> ${Description || "N/A"}</p>
           `,
         });
+
+        // send a message back to the sender
+        if (emailAddress) {
+          await strapi.service("plugin::email.email").send({
+            to: emailAddress,
+            subject: "We received your message",
+            html: `<p>Hi ${
+              fullName || "there"
+            },</p><p>Thank you for contacting Elmalino Drywall. A team member will reach out to you as soon as possible.</p><p>Best regards,<br>Elmalino Drywall</p>`,
+          });
+        }
       } catch (error) {
         strapi.log.error(
           "Failed to send contact-us-form email notification:",
