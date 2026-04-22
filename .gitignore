@@ -77,7 +77,7 @@ $RECYCLE.BIN/
 ssl
 .idea
 nbproject
-!public/uploads/*
+public/uploads
 !public/uploads/.gitkeep
 .tsbuildinfo
 .eslintcache
@@ -132,3 +132,5 @@ exports/
 *.tar.gz.enc
 .tmp/
 *.db
+
+  
