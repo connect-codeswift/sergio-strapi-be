@@ -582,11 +582,10 @@ export interface ApiContactUsFormContactUsForm
     draftAndPublish: true;
   };
   attributes: {
-    companyName: Schema.Attribute.String;
+    city: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Description: Schema.Attribute.Text;
     emailAddress: Schema.Attribute.String;
     fullName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -595,11 +594,14 @@ export interface ApiContactUsFormContactUsForm
       'api::contact-us-form.contact-us-form'
     > &
       Schema.Attribute.Private;
+    message: Schema.Attribute.Text;
     phoneNumber: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    service: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    zipCode: Schema.Attribute.String;
   };
 }
 

@@ -17,13 +17,19 @@
     "emailAddress": {
       "type": "string"
     },
-    "companyName": {
+    "zipCode": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "service": {
       "type": "string"
     },
     "phoneNumber": {
       "type": "string"
     },
-    "Description": {
+    "message": {
       "type": "text"
     }
   }
