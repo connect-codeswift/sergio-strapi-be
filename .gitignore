@@ -10,13 +10,11 @@ Icon
 .Trashes
 ._*
 
-
 ############################
 # Linux
 ############################
 
 *~
-
 
 ############################
 # Windows
@@ -76,11 +74,10 @@ $RECYCLE.BIN/
 # Misc.
 ############################
 
-*#
 ssl
 .idea
 nbproject
-public/uploads/*
+public/uploads
 !public/uploads/.gitkeep
 .tsbuildinfo
 .eslintcache
@@ -129,3 +126,11 @@ dist
 build
 .strapi-updater.json
 .strapi-cloud.json
+
+exports/
+*.tar.gz
+*.tar.gz.enc
+.tmp/
+*.db
+
+  
